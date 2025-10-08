@@ -76,18 +76,17 @@ public class Main {
             case(1):
                 pb.command("firefox");
                 p = pb.start();
-
+                break;
             case(2):
                 pb.command("nano");
                 p = pb.start();
-
+                break;
             case(3):
                 pb.command("gnome-calculator");
                 p = pb.start();
+                break;
 
         }
-
-        p = pb.start();
 
     }
 
