@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -51,14 +50,18 @@ public class Main {
         switch(opcion){
 
             case(1):
-                pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-
+                pb.command("C:\\Users\\Moxixo\\AppData\\Local\\Programs\\Opera GX\\opera.exe");
+                p = pb.start();
+                //pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                break;
             case(2):
-
                 pb.command("notepad");
+                p = pb.start();
+                break;
             case(3):
-
                 pb.command("calc");
+                p = pb.start();
+                break;
         }
 
 
@@ -72,12 +75,15 @@ public class Main {
 
             case(1):
                 pb.command("firefox");
+                p = pb.start();
 
             case(2):
                 pb.command("nano");
+                p = pb.start();
 
             case(3):
                 pb.command("gnome-calculator");
+                p = pb.start();
 
         }
 
