@@ -2,24 +2,30 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-
-
+    public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Estas en: " + System.getProperty("os.name"));
 
         menu();
         int opcion = sc.nextInt();
 
         if(comprobarSistema()){
 
-            abrirWindows(opcion);
-
+            try {
+                abrirWindows(opcion);
+            }catch (IOException e){
+                System.out.println("Hubo un problema de ejecucion");
+            }
         }
         else {
 
-            abrirLinux(opcion);
-
+            try {
+                abrirLinux(opcion);
+            }catch (IOException e){
+                System.out.println("Hubo un problema de ejecucion");
+            }
         }
 
 
@@ -50,9 +56,8 @@ public class Main {
         switch(opcion){
 
             case(1):
-                pb.command("C:\\Users\\Moxixo\\AppData\\Local\\Programs\\Opera GX\\opera.exe");
+                pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
                 p = pb.start();
-                //pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
                 break;
             case(2):
                 pb.command("notepad");
@@ -78,7 +83,7 @@ public class Main {
                 p = pb.start();
                 break;
             case(2):
-                pb.command("nano");
+                pb.command("x-terminal-emulator", "-e", "nano","~/miArchivo.txt");
                 p = pb.start();
                 break;
             case(3):
